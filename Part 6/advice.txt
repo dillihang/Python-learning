@@ -1,0 +1,118 @@
+1. Access the problem directly (tem[1]) and split
+
+Logic:
+
+Separate name = tem[0] and problem = tem[1].
+
+Use problem.split("+") or problem.split("-") to get the two numbers.
+
+Convert to integers and calculate.
+
+Pros:
+
+Clean, simple, very readable.
+
+Works with multi-digit numbers.
+
+Minimal loops and checks.
+
+Cons:
+
+Assumes the operator is known and only one operator exists.
+
+When to use:
+
+When input format is predictable (like this exercise).
+
+2. Loop over the whole inner list, skip the name
+
+Logic:
+
+Outer loop over inner list: for value in tem:
+
+If value == tem[0], skip it (it’s the name).
+
+Inner loop over characters in value to build number1 and number2, detect operator.
+
+Pros:
+
+Flexible if you don’t know which element is the problem.
+
+Can handle inner lists of varying lengths (with multiple fields).
+
+Cons:
+
+More checks (if value == tem[0]: continue)
+
+Slightly messier and more manual
+
+Extra nested loops
+
+When to use:
+
+When input structure is unpredictable or you have multiple fields.
+
+3. For loop over problem string, manually detect operator and build numbers
+
+Logic:
+
+Assign problem = tem[1]
+
+Initialize number1 = "", number2 = "", operator = ""
+
+for char in problem:
+
+If char is + or -, store operator
+
+Else, append to number1 if operator not set, else to number2
+
+Convert to int and calculate
+
+Pros:
+
+Works for any number of digits
+
+Doesn’t require split
+
+Cons:
+
+More code than splitting
+
+Slightly more complex mentally
+
+When to use:
+
+When you want to avoid split for learning or in constraints where split is not allowed
+
+4. While loop over problem string, manually detect operator
+
+Logic:
+
+Same as #3, but with while i < len(problem)
+
+Increment i manually, build number1 and number2
+
+Pros:
+
+Gives complete control over parsing
+
+Useful for more complicated parsing tasks
+
+Cons:
+
+More verbose than for loop
+
+Slightly harder to read
+
+When to use:
+
+When you need precise control over string parsing
+
+When processing more complex expressions
+
+✅ Summary
+Approach	Complexity	Readability	Use Case
+Split problem (tem[1].split)	Low	High	Predictable input, simple problems
+Loop over entire inner list, skip name	Medium	Medium	Flexible input structure
+For loop over problem string	Medium	Medium	No split allowed, multi-digit numbers
+While loop over problem string	Medium-High	Medium	Manual parsing, complex cases
