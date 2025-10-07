@@ -29,7 +29,6 @@ def words(n: int, beginning:str):
 
         return words
             
-    
 
 if __name__=="__main__":
 
