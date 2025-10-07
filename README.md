@@ -1,5 +1,3 @@
-# Python-learning
-
 # Python Learning Exercises
 
 This repository contains Python exercises and small projects I completed while learning Python. The exercises cover a variety of topics including basic syntax, loops, functions, file handling, datetime manipulation, string operations, and small interactive programs.
