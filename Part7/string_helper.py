@@ -35,8 +35,8 @@ def remove_special_characters(orig_string: str):
         else:
             continue
 
-
-    return new_string
+        return new_string
+  
 
 if __name__=="__main__":
 
@@ -44,3 +44,5 @@ if __name__=="__main__":
     print(change_case("Well hello there!"))
     print(split_in_half("Well hello there!"))
     print(remove_special_characters("This is a test, lets see how it goes!!!11!"))
+
+  
