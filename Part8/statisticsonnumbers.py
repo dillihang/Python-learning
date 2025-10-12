@@ -34,7 +34,6 @@ def main():
     even = NumberStats()
     odd = NumberStats()
 
-
     print("Please type in integer numbers:")
     while True:
         numbs = int(input(""))

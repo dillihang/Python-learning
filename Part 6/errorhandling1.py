@@ -22,14 +22,12 @@ def new_person(name: str, age: int):
             
        
             
-   
 
 
-
-# print(new_person("", 25))
+print(new_person("", 25))
 print(new_person("john", 25 ))
-# print(new_person("john fsdjlfjsd fjsljdf ksdjf skljf skldjfkjfslkdfjsdlkfjslkfjlsdjkfjsdfksddfsdfs", 25 ))
-# print(new_person("john hardbringer", -50 ))
-# print(new_person("john hardbringer", 15000 ))
-# print(new_person("john hardbringer", 25))
+print(new_person("john fsdjlfjsd fjsljdf ksdjf skljf skldjfkjfslkdfjsdlkfjslkfjlsdjkfjsdfksddfsdfs", 25 ))
+print(new_person("john hardbringer", -50 ))
+print(new_person("john hardbringer", 15000 ))
+print(new_person("john hardbringer", 25))
 
