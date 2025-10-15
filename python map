@@ -1,0 +1,50 @@
+PYTHON
+│
+├─ Variables & Data Types
+│    ├─ int, float, str, bool
+│    └─ Collections: list, tuple, set, dict
+│
+├─ Operators
+│    ├─ Arithmetic: + - * / % // **
+│    ├─ Comparison: == != < > <= >=
+│    └─ Logical: and, or, not
+│
+├─ Control Flow
+│    ├─ if / elif / else
+│    ├─ for loops
+│    └─ while loops
+│
+├─ Functions & Methods
+│    ├─ Function: independent block of code
+│    │     └─ built-in: len(), sum(), max(), min()
+│    ├─ Method: function tied to an object
+│    │     └─ examples: list.count(), str.upper(), dict.get()
+│    └─ User-defined functions: def my_func(...)
+│
+├─ Classes & Objects
+│    ├─ Class: blueprint (starts with Capital)
+│    │     └─ example: Counter, ListHelper
+│    ├─ Object: instance of class
+│    └─ Methods: functions belonging to objects
+│
+├─ Modules & Packages
+│    ├─ Module: library you import
+│    │     ├─ math → sqrt(), factorial()
+│    │     ├─ collections → Counter, defaultdict
+│    │     └─ statistics → mean(), median()
+│    └─ Package: folder with multiple modules
+│
+├─ Built-in Functions
+│    └─ Examples: len(), sum(), max(), min(), range(), print()
+│
+├─ Comprehensions
+│    └─ List, dict, set comprehensions
+│
+├─ Exceptions / Error Handling
+│    └─ try / except / finally
+│
+├─ File I/O
+│    └─ open(), read(), write(), with
+│
+└─ Iterators & Generators
+     └─ for loops, yield, lazy evaluation

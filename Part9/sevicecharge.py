@@ -7,8 +7,6 @@ class BankAccount:
     a 1% service charge using a private method. The balance can be accessed via a getter
     property, but cannot be modified directly from outside the class.
     """
-
-
     def __init__(self, name: str, account_no: str, balance: float):
         self.__name = name
         self.__account_no = account_no
@@ -37,7 +35,6 @@ class BankAccount:
         self.__balance = self.__balance - charge_value
 
         
-   
 if __name__=="__main__":
 
     account = BankAccount("Randy Riches", "12345-6789", 1000)
