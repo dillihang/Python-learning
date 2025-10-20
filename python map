@@ -22,10 +22,122 @@ PYTHON
 │    └─ User-defined functions: def my_func(...)
 │
 ├─ Classes & Objects
-│    ├─ Class: blueprint (starts with Capital)
-│    │     └─ example: Counter, ListHelper
-│    ├─ Object: instance of class
-│    └─ Methods: functions belonging to objects
+│    ├─ Class: blueprint for creating objects
+│    │     └─ Example:
+│    │        class Dog:
+│    │            def __init__(self, name):
+│    │                self.name = name
+│    │            def bark(self):
+│    │                print(f"{self.name} says woof!")
+│    │
+│    ├─ Object: an instance of a class
+│    │     └─ Example:
+│    │        dog1 = Dog("Buddy")
+│    │        dog1.bark()   # Buddy says woof!
+│    │
+│    ├─ Attributes (data tied to objects)
+│    │     ├─ Public: accessible anywhere → self.name
+│    │     ├─ Protected: internal use → self._name
+│    │     └─ Private: restricted → self.__name
+│    │
+│    ├─ Property Decorators
+│    │     ├─ @property → getter
+│    │     ├─ @<name>.setter → setter
+│    │     └─ @<name>.deleter → deleter
+│    │
+│    │     Example:
+│    │        class Person:
+│    │            def __init__(self, name):
+│    │                self._name = name
+│    │
+│    │            @property
+│    │            def name(self):          # getter
+│    │                return self._name
+│    │
+│    │            @name.setter
+│    │            def name(self, value):   # setter
+│    │                self._name = value
+│    │
+│    │            @name.deleter
+│    │            def name(self):          # deleter
+│    │                del self._name
+│    │
+│    │        p = Person("Alice")
+│    │        print(p.name)      # Alice
+│    │        p.name = "Eve"     # updates _name
+│    │        del p.name         # deletes _name
+│    │
+│    ├─ Methods (functions belonging to objects)
+│    │     ├─ Instance Methods → most common
+│    │     │     - Take `self` as first argument
+│    │     │     - Affect the individual object
+│    │     │
+│    │     │     Example:
+│    │     │        class Car:
+│    │     │            def __init__(self, brand, speed):
+│    │     │                self.brand = brand
+│    │     │                self.speed = speed
+│    │     │
+│    │     │            def accelerate(self, amount):
+│    │     │                self.speed += amount
+│    │     │                print(f"{self.brand} speed: {self.speed}")
+│    │     │
+│    │     │        car1 = Car("Tesla", 50)
+│    │     │        car1.accelerate(20)   # Tesla speed: 70
+│    │     │
+│    │     ├─ Class Methods → affect the class itself
+│    │     │     - Use @classmethod
+│    │     │     - Take `cls` as first argument
+│    │     │
+│    │     │     Example:
+│    │     │        class Counter:
+│    │     │            count = 0
+│    │     │
+│    │     │            @classmethod
+│    │     │            def increment(cls):
+│    │     │                cls.count += 1
+│    │     │
+│    │     │        Counter.increment()
+│    │     │        print(Counter.count)   # 1
+│    │     │
+│    │     └─ Static Methods → utility functions inside a class
+│    │           - Use @staticmethod
+│    │           - No self or cls
+│    │
+│    │           Example:
+│    │           class MathHelper:
+│    │               @staticmethod
+│    │               def add(a, b):
+│    │                   return a + b
+│    │
+│    │           result = MathHelper.add(3, 5)  # 8
+│    │
+│    ├─ Inheritance
+│    │     ├─ Allows a class to inherit from another
+│    │     ├─ Base class (Parent), Derived class (Child)
+│    │     ├─ Example:
+│    │     │     class Animal:
+│    │     │         def speak(self):
+│    │     │             print("Some sound")
+│    │     │
+│    │     │     class Dog(Animal):
+│    │     │         def speak(self):  # override
+│    │     │             print("Woof!")
+│    │     │
+│    │     │     d = Dog()
+│    │     │     d.speak()   # Woof!
+│    │     └─ super() → calls parent method
+│    │
+│    ├─ Encapsulation
+│    │     ├─ Hides internal details of an object
+│    │     └─ Achieved using private/protected attributes
+│    │
+│    └─ Polymorphism
+│          ├─ Means “many forms”
+│          ├─ Same method name, different behavior
+│          └─ Example:
+│                for animal in [Dog(), Cat()]:
+│                    animal.speak()
 │
 ├─ Modules & Packages
 │    ├─ Module: library you import
