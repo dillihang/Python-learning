@@ -1,0 +1,12 @@
+import math
+
+def square_roots(numbers: list):
+    return [math.sqrt(numb) for numb in numbers]
+    return sqr_root
+
+
+if __name__ == "__main__":
+    
+    lines = square_roots([1,2,3,4])
+    for line in lines:
+        print(line)
