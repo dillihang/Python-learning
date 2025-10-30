@@ -1,5 +1,3 @@
-import string
-
 class Task:
     """
     Represents a single task in a software company's task list.
