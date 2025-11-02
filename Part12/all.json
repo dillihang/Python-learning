@@ -1,0 +1,17 @@
+[
+    {"name": "Patrik Laine", "nationality": "FIN", "assists": 35, "goals": 28, "penalties": 22, "team": "WPG", "games": 68},
+    {"name": "Sidney Crosby", "nationality": "CAN", "assists": 47, "goals": 16, "penalties": 18, "team": "PIT", "games": 41},
+    {"name": "Alex Ovechkin", "nationality": "RUS", "assists": 19, "goals": 48, "penalties": 36, "team": "WSH", "games": 68},
+    {"name": "Connor McDavid", "nationality": "CAN", "assists": 63, "goals": 34, "penalties": 12, "team": "EDM", "games": 64},
+    {"name": "Leon Draisaitl", "nationality": "GER", "assists": 67, "goals": 43, "penalties": 18, "team": "EDM", "games": 71},
+    {"name": "Artemi Panarin", "nationality": "RUS", "assists": 63, "goals": 32, "penalties": 20, "team": "NYR", "games": 69},
+    {"name": "Brad Marchand", "nationality": "CAN", "assists": 59, "goals": 28, "penalties": 44, "team": "BOS", "games": 70},
+    {"name": "David Pastrnak", "nationality": "CZE", "assists": 47, "goals": 48, "penalties": 20, "team": "BOS", "games": 70},
+    {"name": "Nathan MacKinnon", "nationality": "CAN", "assists": 58, "goals": 35, "penalties": 12, "team": "COL", "games": 69},
+    {"name": "Mika Zibanejad", "nationality": "SWE", "assists": 34, "goals": 41, "penalties": 14, "team": "NYR", "games": 57},
+    {"name": "Steven Stamkos", "nationality": "CAN", "assists": 37, "goals": 29, "penalties": 24, "team": "TBL", "games": 57},
+    {"name": "Evgeni Malkin", "nationality": "RUS", "assists": 49, "goals": 25, "penalties": 58, "team": "PIT", "games": 55},
+    {"name": "Auston Matthews", "nationality": "USA", "assists": 34, "goals": 47, "penalties": 10, "team": "TOR", "games": 70},
+    {"name": "Teuvo Teravainen", "nationality": "FIN", "assists": 48, "goals": 15, "penalties": 14, "team": "CAR", "games": 68},
+    {"name": "Sebastian Aho", "nationality": "FIN", "assists": 38, "goals": 38, "penalties": 14, "team": "CAR", "games": 68}
+]
