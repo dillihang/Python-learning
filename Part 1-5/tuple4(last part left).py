@@ -72,15 +72,6 @@ def summary(students: dict):
         finaldict[keys]=(len(students[keys]))
 
        
-    
-
-       
-
-    
-        
-    
-
-
 
     print(f"most course completed {finaldict[max(finaldict)]} {max(finaldict)}")
 

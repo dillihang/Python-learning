@@ -165,7 +165,7 @@ class PlayersApp:
 
     def execute(self):
         file_name = input("file name: ")
-        if file_name == "partial.json":
+        if file_name == "partial.json" or file_name == "all.json":
             self.playerapp.load_player_objects(file_name)
             print(f"read the data of {len(self.playerapp.player_DB)} players")
             self.commands()       

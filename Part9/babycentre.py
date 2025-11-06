@@ -1,17 +1,17 @@
-"""
-This program models persons and a BabyCentre that can weigh and feed them.
-
-Classes:
-- Person: stores a person's name, age, height, and weight.
-- BabyCentre: performs actions on Person objects.
-  • weigh(person): returns the person's weight and counts the weigh-in.
-  • feed(person): increases the person's weight by 1.
-  • weigh_ins(): returns the total number of weigh-ins performed.
-
-Example usage:
-Create Person objects, feed them, weigh them, and track the number of weigh-ins.
-"""
 class Person:
+    """
+    This program models persons and a BabyCentre that can weigh and feed them.
+
+    Classes:
+    - Person: stores a person's name, age, height, and weight.
+    - BabyCentre: performs actions on Person objects.
+    • weigh(person): returns the person's weight and counts the weigh-in.
+    • feed(person): increases the person's weight by 1.
+    • weigh_ins(): returns the total number of weigh-ins performed.
+
+    Example usage:
+    Create Person objects, feed them, weigh them, and track the number of weigh-ins.
+    """
 
     def __init__(self, name, age, height, weight):
         self.name = name

@@ -1,16 +1,15 @@
-"""
-Series management program.
-
-- Series class: represents a TV show with title, seasons, genres, and ratings.
-- rate(): add a rating and update average.
-- minimum_grade(): filter a list of Series by minimum average rating.
-- includes_genre(): filter a list of Series by genre.
-
-Example usage:
-Create Series objects, rate them, store in a list, and use the functions to filter or display series.
-"""
-
 class Series:
+    """
+    Series management program.
+
+    - Series class: represents a TV show with title, seasons, genres, and ratings.
+    - rate(): add a rating and update average.
+    - minimum_grade(): filter a list of Series by minimum average rating.
+    - includes_genre(): filter a list of Series by genre.
+
+    Example usage:
+    Create Series objects, rate them, store in a list, and use the functions to filter or display series.
+    """
     def __init__(self, title: str, seasons: int, genres: list):
         self.genre = genres
         self.title = title

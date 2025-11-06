@@ -1,9 +1,6 @@
 def recursive_sum(number: int):
     if number<=1:
         return number
-    # numb=0
-    # for i in range(1, number+1):
-    #     numb +=i
     
     return number + recursive_sum(number-1)
 

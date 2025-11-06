@@ -9,7 +9,6 @@ class ExamResult:
 def best_results(results: list):
     return [max(numb.grade1, numb.grade2, numb.grade3) for numb in results]
 
-        
 if __name__ == "__main__":
     result1 = ExamResult("Peter",5,3,4)
     result2 = ExamResult("Pippa",3,4,1)

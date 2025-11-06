@@ -1,24 +1,23 @@
-"""
-This program defines a LunchCard class that simulates a cafeteria debit card system.
-
-Features:
-- Each LunchCard instance has a balance (in euros).
-- The cardholder can:
-  • eat_lunch(): deducts 2.60 euros if sufficient funds are available
-  • eat_special(): deducts 4.60 euros if sufficient funds are available
-  • deposit_money(amount): adds the given amount to the balance
-      - Raises ValueError if the deposit amount is negative
-- The __str__ method returns the balance formatted to one decimal place.
-
-The main program demonstrates the following scenario:
-- Peter and Grace each start with a card balance
-- They buy lunches and specials
-- Peter makes a deposit and eats again
-- Grace also makes a deposit
-- Their updated balances are printed after each stage
-"""
-
 class LunchCard:
+    """
+    This program defines a LunchCard class that simulates a cafeteria debit card system.
+
+    Features:
+    - Each LunchCard instance has a balance (in euros).
+    - The cardholder can:
+    • eat_lunch(): deducts 2.60 euros if sufficient funds are available
+    • eat_special(): deducts 4.60 euros if sufficient funds are available
+    • deposit_money(amount): adds the given amount to the balance
+        - Raises ValueError if the deposit amount is negative
+    - The __str__ method returns the balance formatted to one decimal place.
+
+    The main program demonstrates the following scenario:
+    - Peter and Grace each start with a card balance
+    - They buy lunches and specials
+    - Peter makes a deposit and eats again
+    - Grace also makes a deposit
+    - Their updated balances are printed after each stage
+    """
     def __init__(self, balance: float):
         self.balance = balance
     
