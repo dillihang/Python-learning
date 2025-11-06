@@ -1,80 +1,131 @@
 """
-Exercise: Analog Clock Display with Pygame
+Asteroid Collector Game
+-----------------------
 
-This program displays an analog clock using Pygame which shows the current system time.
-The clock face includes:
+A simple arcade-style game built with Pygame.
 
-- A large red outer circle representing the clock boundary.
-- A black inner circle to create a border effect.
-- A red center circle representing the pivot point.
-- Hour, minute, and second hands drawn as lines in blue.
-- The window title also displays the current time in "HH:MM:SS" format.
+Description:
+    The player controls a robot that moves left and right to catch falling asteroids.
+    Each asteroid caught awards 1 point. Missing an asteroid reduces the player's lives.
+    The game ends when all lives are lost, displaying a Game Over screen and the final score.
 
-Behavior:
-- The hour, minute, and second hands are updated in real-time according to the system clock.
-- The hands rotate correctly:
-    - Seconds: full rotation in 60 seconds.
-    - Minutes: full rotation in 60 minutes.
-    - Hours: full rotation in 12 hours.
-- The center of the clock is at the center of the window (320, 240 for a 640x480 window).
-- The lengths of the hands differ: hour < minute < second for clarity.
+Features:
+    - Multiple falling asteroids with random spawn positions.
+    - Real-time score tracking and on-screen display.
+    - Life counter with a Game Over sequence when lives reach zero.
+    - Smooth movement controls (A and D keys).
+    - Clear text indicators for points and remaining lives.
 
 Controls:
-- Close the window to exit the program.
+    - A: Move left
+    - D: Move right
+    - Close window to quit the game.
 
-Requirements:
-- Pygame library installed.
-- Python datetime module available.
-
-Window size: 640x480 pixels
-Frame rate: 60 FPS
+Author:
+    Dilli
 """
 import pygame
-import math
-import datetime
+import random
+
+current_score = 0
+dead_counter = 3
 
 pygame.init()
 display = pygame.display.set_mode((640, 480))
-
-center_x = 640/2
-center_y = 480/2
-
+robot = pygame.image.load("Part13/robot.png")
+rock = pygame.image.load("Part13/small_rock.png")
 clock = pygame.time.Clock()
 
+robot_width = robot.get_width()
+robot_height = robot.get_height()
+rock_width = rock.get_width()
+rock_height = rock.get_height()
+
+to_right = False
+to_left = False
+
+robot_x = 0
+robot_y = 480 - robot_height
+
+random_x = [random.randint(5, 630) for _ in range(6)]
+random_y = [random.randint(-480, -50) for _ in range(6)]
+
+def game_mech():
+
+    global current_score
+    global dead_counter
+
+    if dead_counter == 0:
+        return
+
+    for i in range(6):
+        display.blit(rock, (random_x[i], random_y[i]))
+        random_y[i] +=1
+        if random_y[i] >= 480-rock_height:
+            dead_counter -=1
+            random_x[i] = random.randint(5, 630)
+            random_y[i] = random.randint(-480, -50)
+
+        elif robot_x < random_x[i] + rock_width and robot_x + robot_width > random_x[i] and robot_y < random_y[i] + rock_height and robot_y + robot_height > random_y[i]:
+            current_score+=1
+            random_x[i] = random.randint(5, 630)
+            random_y[i] = random.randint(-480, -50)
+    
+ 
+
 while True:
-    now = datetime.datetime.now()
-    seconds = now.second
-    minutes = now.minute
-    hours = now.hour
+    pygame.display.set_caption(f"Asteroids")
 
-    seconds_angle = math.radians(seconds * 6 - 90)
-    minutes_angle = math.radians(minutes * 6 - 90)
-    hours_angle = math.radians((hours % 12) * 30 + minutes * 0.5 - 90)
-
-    current_time = datetime.datetime.now().strftime("%H:%M:%S")
-    pygame.display.set_caption(f"Clock - {current_time}")
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_d:
+                to_right = True
+            if event.key == pygame.K_a:
+                to_left = True
+        
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_d:
+                to_right = False
+            if event.key == pygame.K_a:
+                to_left = False
+
+
     display.fill((0, 0, 0))
-    pygame.draw.circle(display, (255, 0, 0), (center_x, center_y), 200)
-    pygame.draw.circle(display, (0, 0, 0), (center_x, center_y), 195)
-    pygame.draw.circle(display, (255, 0, 0), (center_x, center_y), 10)
-    pygame.draw.circle(display, (255, 0, 0), (center_x, center_y), 10)
 
-    seconds_x = center_x + math.cos(seconds_angle) * 180 
-    seconds_y = center_y + math.sin(seconds_angle) * 180
+    game_font = pygame.font.SysFont("Arial", 24)
+    Point_text = game_font.render(f"Points: {current_score}", True, (255, 0, 0))
+    display.blit(Point_text, (520, 10))
+    game_font = pygame.font.SysFont("Arial", 24)
+    lives_text = game_font.render(f"Lives left: {dead_counter}", True, (255, 0, 0))
+    display.blit(lives_text, (20, 10))
 
-    minutes_x = center_x + math.cos(minutes_angle) * 170
-    minutes_y = center_y + math.sin(minutes_angle) * 170
+    game_mech()
+    display.blit(robot, (robot_x, robot_y))
 
-    hours_x = center_x + math.cos(hours_angle) * 150
-    hours_y = center_y + math.sin(hours_angle) * 150
+    if dead_counter == 0:
+        final_score = current_score
 
-    pygame.draw.line(display, (0, 0, 255), (center_x, center_y), (seconds_x, seconds_y), 1)
-    pygame.draw.line(display, (0, 0, 255), (center_x, center_y), (minutes_x, minutes_y), 3)
-    pygame.draw.line(display, (0, 0, 255), (center_x, center_y), (hours_x, hours_y), 5)
+        display.fill((0, 0, 0))
+        game_font = pygame.font.SysFont("Arial", 100)
+        end_text = game_font.render(f"GAME OVER", True, (255, 0, 0))
 
+        game_font = pygame.font.SysFont("Arial", 50)
+        highestscore_text = game_font.render(f"Your Score: {final_score}", True, (255, 0, 0))
+
+        end_text_w = end_text.get_width()
+        end_text_h = end_text.get_height()
+
+        display.blit(end_text, (320-end_text_w//2, 240-end_text_h//2))
+        display.blit(highestscore_text, (320 - highestscore_text.get_height()//2, 300 - highestscore_text.get_height()//2))
+
+    if to_right and robot_x<=640-robot_width:
+        robot_x+=3
+    if to_left and robot_x>=0:
+        robot_x-=3
+
+    
     pygame.display.flip()
     clock.tick(60)
