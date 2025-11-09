@@ -15,3 +15,6 @@ This repository contains Python exercises and small projects I completed while l
 ## How to Run
 
 Run the Python scripts with `python script_name.py`
+
+## Course Completion Summary
+For a detailed overview of my completion of the Python Programming MOOC 2024, see [Completion_summary.md](Completion_summary.md)
