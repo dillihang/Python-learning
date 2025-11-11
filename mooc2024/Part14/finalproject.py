@@ -523,7 +523,6 @@ class Drone(Sprite):
 #     def update(self):
 #         pass
         
-
 class Bullet(Sprite):
     """
     Represents a bullet shot by the player or an enemy.
@@ -538,8 +537,6 @@ class Bullet(Sprite):
         pygame.draw.circle(surface, self.colour, (self.position_x, self.position_y), self.width)
         pygame.draw.circle(surface, self.colour, (self.position_x, self.position_y), self.width +2, 1)
         
-        
-
     def update(self, game: "SpaceShooter"):
         if self in game.player_bullets_list:
             self.position_y -= self.speed

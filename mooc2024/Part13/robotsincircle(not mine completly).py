@@ -47,7 +47,6 @@ while True:
 
         window.blit(robot, (x, y))
  
-
     pygame.display.flip()
 
     angle += 0.01
